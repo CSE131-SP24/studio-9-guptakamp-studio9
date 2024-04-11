@@ -31,13 +31,13 @@ public class WordCount {
 	 */
 	public static Map<String, Integer> countWords(List<String> words) {
 		HashMap<String, Integer> wordCount = new HashMap<>();
-		int j = 0;
 		for (int i = 0; i < words.size(); i++) {
-			if (wordCount.get(i) == null) {
-				wordCount.put(words.get(i), j++);
+			if (wordCount.containsKey(words.get(i))) {
+				wordCount.replace(words.get(i) , (wordCount.get(words.get(i))), (wordCount.get(words.get(i)))+1);
+				
 			}
 			else {
-				int count = wordCount.get(i);
+				int count = wordCount.get();
 				wordCount.put(words.get(i), count++);
 			}
 		}
